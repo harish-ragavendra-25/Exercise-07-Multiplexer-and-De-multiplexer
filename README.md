@@ -57,6 +57,7 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: HARISH RAGAVENDRA S
 RegisterNumber:  212222230045
 ```
+## MULTIPLEXER:
 ```
 module multiplexer(I0,I1,I2,I3,S0,S1,Y);
 input I0,I1,I2,I3,S0,S1;
@@ -71,15 +72,31 @@ and(S,S0,S1,I3);
 or(Y,P,Q,R,S);
 endmodule
 ```
+## DEMULTIPLEXER:
+```
+module demultiplexer(Y0,Y1,Y2,Y3,S0,S1,I);
+input I,S0,S1;
+output Y0,Y1,Y2,Y3;
+wire S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (Y0,I,S0c,S1c);
+and(Y1,I,S0c,S1);
+and(Y2,I,S0,S1c);
+and(Y3,I,S0,S1);
+endmodule
+```
 ### RTL LOGIC  
 ## MULTIPLEXER:
 ![multiplexer](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/04f79fa5-454a-4f5a-b680-ac513a815a83)
 ## DEMULTIPLEXER:
+![demultiplexer rtl](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/2b556ef0-f646-4ab6-abd7-3f441f2944a2)
 
 ### TIMING DIGRAMS  
 ## MULTIPLEXER:
 ![multiplexer waveform](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/3fef8e2e-f8c3-43a5-a417-3702216a337f)
-
+## DEMULTIPLEXER:
+![demultiplexer waveform](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/253afec0-2082-499c-9077-7a3c89ab33a4)
 ### TRUTH TABLE 
 ## MULTIPLEXER:
 ![multiplexer truth table](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/dcf8a496-3dd6-4e21-b0f7-5d8516124e72)
