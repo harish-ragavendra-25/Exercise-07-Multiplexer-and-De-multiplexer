@@ -52,37 +52,38 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
-
-
-
+Developed by: HARISH RAGAVENDRA S
+RegisterNumber:  212222230045
+```
+```
+module multiplexer(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire P,Q,R,S,S0c,S1c;
+not(S0c,S0);
+not(S1c,S1);
+and(P,S0c,S1c,I0);
+and(Q,S0c,S1,I1);
+and(R,S0,S1c,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
+```
 ### RTL LOGIC  
-
-
-
-
-
-
-
+## MULTIPLEXER:
+![multiplexer](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/04f79fa5-454a-4f5a-b680-ac513a815a83)
+## DEMULTIPLEXER:
 
 ### TIMING DIGRAMS  
-
-
-
-
+## MULTIPLEXER:
+![multiplexer waveform](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/3fef8e2e-f8c3-43a5-a417-3702216a337f)
 
 ### TRUTH TABLE 
-
-
-
-
-
-
+## MULTIPLEXER:
+![multiplexer truth table](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/dcf8a496-3dd6-4e21-b0f7-5d8516124e72)
+## DEMULTIPLEXER:
+![demultiplexer](https://github.com/harish-ragavendra-25/Exercise-07-Multiplexer-and-De-multiplexer/assets/114852180/9ec47bf7-d38b-4fcf-8e7b-6b2802d718d6)
 ### RESULTS 
+Thus the program to design a 4x1 multiplexer and 1x4 demultiplexer is done successful.
